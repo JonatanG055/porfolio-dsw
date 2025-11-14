@@ -1,0 +1,352 @@
+<!-- ==================== PAGE HEADER ==================== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+  <!-- Animated Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
+  <div class="absolute inset-0 grid-pattern opacity-20"></div>
+  
+  <!-- Floating Orbs -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+  <div class="absolute top-40 right-20 w-64 h-64 bg-cyan-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 4s;"></div>
+
+  <div class="container-custom relative z-10 text-center">
+    <div class="animate-fade-in space-y-6">
+      <!-- Badge -->
+      <div class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm rounded-full border border-purple-500/30 shadow-glow">
+        <i class="bi bi-person-circle text-2xl text-purple-400"></i>
+        <span class="font-semibold text-purple-300">Sobre Mí</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold">
+        Conoce <span class="gradient-text-neon">Mi Historia</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
+        Desarrollador apasionado por crear soluciones tecnológicas innovadoras
+      </p>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+      <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#0a0e27"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== ABOUT CONTENT ==================== -->
+<section class="section relative">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left: Image & Stats -->
+      <div class="relative animate-on-scroll">
+        <!-- Main Image -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-cyan-600/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+          <img 
+            [src]="profileImage" 
+            alt="Jonatan Guevara" 
+            class="relative rounded-3xl shadow-2xl border-2 border-purple-500/30 max-w-md mx-auto transform group-hover:scale-105 transition-transform duration-500">
+          
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 glass-neon px-6 py-4 rounded-2xl shadow-glow animate-float" style="animation-delay: 1s;">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                <i class="bi bi-check-lg text-white text-2xl"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-gray-300">Estado</p>
+                <p class="text-xl font-bold gradient-text-neon">Disponible</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4 mt-12">
+          <div class="card-neon p-6 text-center hover-lift">
+            <i class="bi bi-trophy-fill text-4xl text-yellow-400 mb-2"></i>
+            <h3 class="text-3xl font-bold gradient-text-neon mb-1">3+</h3>
+            <p class="text-gray-400 text-sm">Años de Experiencia</p>
+          </div>
+          <div class="card-neon p-6 text-center hover-lift" style="animation-delay: 0.1s;">
+            <i class="bi bi-briefcase-fill text-4xl text-purple-400 mb-2"></i>
+            <h3 class="text-3xl font-bold gradient-text-neon mb-1">4+</h3>
+            <p class="text-gray-400 text-sm">Proyectos Completados</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="space-y-8 animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-50">
+            Hola, soy <span class="gradient-text-neon">Jonatan Elias Guevara Chicas</span>
+          </h2>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            Full Stack Developer & Software Architect con experiencia en desarrollo de 
+            soluciones tecnológicas escalables y eficientes. Mi pasión es transformar 
+            ideas complejas en aplicaciones funcionales que generen valor real.
+          </p>
+          <p class="text-lg text-gray-400 leading-relaxed">
+            Especializado en arquitecturas cloud, integración de IA y desarrollo full-stack 
+            utilizando frameworks modernos como React, Next.js, Node.js y más. 
+            He liderado equipos, optimizado flujos de trabajo y diseñado sistemas robustos 
+            que cumplen con los más altos estándares de calidad.
+          </p>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="flex items-center space-x-4 p-4 glass-neon rounded-2xl hover-lift">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope-fill text-white text-xl"></i>
+            </div>
+            <div class="overflow-hidden">
+              <p class="text-sm text-gray-400">Email</p>
+              <p class="text-sm font-semibold text-purple-300 truncate">{{ contactInfo.email }}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4 p-4 glass-neon rounded-2xl hover-lift">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-telephone-fill text-white text-xl"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Teléfono</p>
+              <p class="text-sm font-semibold text-blue-300">{{ contactInfo.phone }}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4 p-4 glass-neon rounded-2xl hover-lift">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-600 to-cyan-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-geo-alt-fill text-white text-xl"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Ubicación</p>
+              <p class="text-sm font-semibold text-cyan-300">{{ contactInfo.location }}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4 p-4 glass-neon rounded-2xl hover-lift">
+            <div class="w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-globe text-white text-xl"></i>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Idiomas</p>
+              <p class="text-sm font-semibold text-pink-300">Español, Inglés</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a routerLink="/contact" class="btn-neon group">
+            <i class="bi bi-send-fill mr-2 group-hover:scale-110 transition-transform"></i>
+            Contáctame
+          </a>
+          <a routerLink="/portfolio" class="btn-outline group">
+            <i class="bi bi-briefcase-fill mr-2 group-hover:scale-110 transition-transform"></i>
+            Ver Proyectos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TIMELINE SECTION ==================== -->
+<section class="section bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-10"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="section-title">
+        Mi <span class="gradient-text-neon">Trayectoria</span>
+      </h2>
+      <p class="section-subtitle">
+        Un viaje de aprendizaje continuo y crecimiento profesional
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Vertical Line -->
+      <div class="timeline-line"></div>
+
+      <!-- Timeline Items -->
+      <div class="space-y-12">
+        <div *ngFor="let item of timeline; let i = index" 
+             class="relative animate-on-scroll"
+             [style.animation-delay]="i * 0.1 + 's'">
+          
+          <!-- Dot -->
+          <div class="timeline-dot"></div>
+
+          <!-- Content -->
+          <div class="grid md:grid-cols-2 gap-8 items-center"
+               [class.md:flex-row-reverse]="i % 2 === 0">
+            
+            <!-- Date Badge (Left on odd, Right on even) -->
+            <div [class.md:text-right]="i % 2 !== 0" 
+                 [class.md:text-left]="i % 2 === 0"
+                 [class.md:order-2]="i % 2 === 0">
+              <span class="inline-block px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-full text-sm font-semibold shadow-glow">
+                <i class="bi bi-calendar3 mr-2"></i>{{ item.date }}
+              </span>
+            </div>
+
+            <!-- Content Card -->
+            <div [class.md:order-1]="i % 2 === 0">
+              <div class="card-neon p-6 hover-lift group">
+                <div class="flex items-start space-x-4">
+                  <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-glow">
+                    <i [class]="item.icon + ' text-white text-2xl'"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-gray-50 mb-1 group-hover:gradient-text-neon transition-all">
+                      {{ item.title }}
+                    </h3>
+                    <p class="text-purple-400 font-semibold mb-3">{{ item.subtitle }}</p>
+                    <p class="text-gray-400 leading-relaxed">{{ item.description }}</p>
+                    
+                    <!-- Achievements -->
+                    <div *ngIf="item.achievements && item.achievements.length > 0" class="mt-4 flex flex-wrap gap-2">
+                      <span *ngFor="let achievement of item.achievements" 
+                            class="badge-neon text-xs">
+                        <i class="bi bi-check-circle-fill mr-1"></i>{{ achievement }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SKILLS SECTION ==================== -->
+<section class="section relative">
+  <div class="absolute inset-0 hero-pattern"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="section-title">
+        Habilidades <span class="gradient-text-neon">Técnicas</span>
+      </h2>
+      <p class="section-subtitle">
+        Tecnologías y herramientas que domino
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- Skills Column 1 -->
+      <div class="space-y-6 animate-on-scroll">
+        <div *ngFor="let skill of skillsColumn1" class="skill-item">
+          <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center space-x-3">
+              <i [class]="skill.icon + ' text-purple-400 text-xl'"></i>
+              <h6 class="font-semibold text-gray-50">{{ skill.name }}</h6>
+            </div>
+            <span class="text-sm font-bold gradient-text-neon">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Column 2 -->
+      <div class="space-y-6 animate-on-scroll" style="animation-delay: 0.2s;">
+        <div *ngFor="let skill of skillsColumn2" class="skill-item">
+          <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center space-x-3">
+              <i [class]="skill.icon + ' text-cyan-400 text-xl'"></i>
+              <h6 class="font-semibold text-gray-50">{{ skill.name }}</h6>
+            </div>
+            <span class="text-sm font-bold gradient-text-neon">{{ skill.level }}%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" [style.width.%]="skill.level"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CERTIFICATIONS SECTION ==================== -->
+<section class="section bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="section-title">
+        <span class="gradient-text-neon">Certificaciones</span>
+      </h2>
+      <p class="section-subtitle">
+        Formación continua y validación de conocimientos
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div *ngFor="let cert of certifications; let i = index" 
+           class="animate-on-scroll"
+           [style.animation-delay]="i * 0.1 + 's'">
+        <div class="card-neon p-8 text-center hover-lift h-full group">
+          <div class="w-20 h-20 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform shadow-glow-lg">
+            <i [class]="cert.icon + ' text-white text-4xl'"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-50 mb-2 group-hover:gradient-text-neon transition-all">
+            {{ cert.title }}
+          </h3>
+          <p class="text-purple-400 font-semibold mb-4">{{ cert.issuer }}</p>
+          <p class="text-gray-400 text-sm leading-relaxed">{{ cert.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA SECTION ==================== -->
+<section class="section relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-cyan-900/30"></div>
+  <div class="absolute inset-0 grid-pattern opacity-20"></div>
+  
+  <!-- Animated Orbs -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+
+  <div class="container-custom relative z-10 text-center">
+    <div class="max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-50">
+        ¿Listo Para <span class="gradient-text-neon">Trabajar Juntos?</span>
+      </h2>
+      <p class="text-xl text-gray-400 mb-8">
+        Estoy disponible para proyectos freelance y colaboraciones. 
+        ¡Hablemos sobre tu próxima gran idea!
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a routerLink="/contact" class="btn-neon">
+          <i class="bi bi-send-fill mr-2"></i>
+          Enviar Mensaje
+        </a>
+        <a routerLink="/portfolio" class="btn-outline">
+          <i class="bi bi-briefcase-fill mr-2"></i>
+          Ver Proyectos
+        </a>
+        <a [href]="getPhoneLink(contactInfo.phone)" class="btn-outline">
+          <i class="bi bi-telephone-fill mr-2"></i>
+          Llamar Ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,156 @@
+/* ==================== HERO SECTION - DARK ==================== */
+.hero-section {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f35 50%, #0a0e27 100%);
+  position: relative;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in > * {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-fade-in > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-fade-in > *:nth-child(5) { animation-delay: 0.5s; }
+
+/* ==================== 3D CARD EFFECT ==================== */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover img {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+/* ==================== SCROLL ANIMATIONS ==================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== TYPING CURSOR ==================== */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ==================== FLOATING CARDS - DARK ==================== */
+.glass-neon {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+/* ==================== SERVICE CARDS - DARK ==================== */
+.card-modern:hover .icon-container {
+  animation: pulse-glow-neon 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-neon {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* ==================== PROJECT CARDS ==================== */
+.card-modern img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-modern:hover img {
+  transform: scale(1.1);
+}
+
+/* ==================== GRADIENT BACKGROUNDS - DARK ==================== */
+.gradient-bg-neon {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 50%, #06b6d4 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ==================== FLOATING ANIMATION ==================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .icon-container {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+.will-change-transform {
+  will-change: transform;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ==================== GLOW EFFECTS ==================== */
+.shadow-glow-neon {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.shadow-glow-neon:hover {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.8), 0 0 60px rgba(59, 130, 246, 0.6);
+}

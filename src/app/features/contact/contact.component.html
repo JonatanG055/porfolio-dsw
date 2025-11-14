@@ -1,0 +1,368 @@
+<!-- ==================== PAGE HEADER ==================== -->
+<section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+  <!-- Animated Background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
+  <div class="absolute inset-0 hero-pattern"></div>
+  
+  <!-- Floating Orbs -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+  <div class="absolute top-40 right-20 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 4s;"></div>
+
+  <div class="container-custom relative z-10 text-center">
+    <div class="animate-fade-in space-y-6">
+      <!-- Badge -->
+      <div class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 backdrop-blur-sm rounded-full border border-purple-500/30 shadow-glow">
+        <i class="bi bi-envelope-heart-fill text-2xl text-purple-400"></i>
+        <span class="font-semibold text-purple-300">Contacto</span>
+      </div>
+      
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold">
+        ¡Hablemos <span class="gradient-text-neon">Sobre Tu Proyecto!</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
+        ¿Tienes una idea? Estoy aquí para ayudarte a hacerla realidad
+      </p>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+      <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#0a0e27"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ==================== CONTACT CONTENT ==================== -->
+<section class="section relative">
+  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="grid lg:grid-cols-5 gap-8">
+      
+      <!-- LEFT: Contact Form (3/5) -->
+      <div class="lg:col-span-3 animate-on-scroll">
+        <div class="card-neon p-8 md:p-10">
+          <div class="flex items-center space-x-3 mb-8">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center shadow-glow">
+              <i class="bi bi-send-fill text-white text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-50">Envíame un Mensaje</h3>
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+            <!-- Name & Email Row -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">
+                  <i class="bi bi-person-fill text-purple-400 mr-2"></i>
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  placeholder="Tu nombre"
+                  class="w-full px-4 py-3 bg-[#0a0e27] border-2 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-all"
+                  [class.border-red-500]="isFieldInvalid('name')"
+                  [class.border-green-500]="isFieldValid('name')"
+                  [class.border-gray-700]="!contactForm.get('name')?.touched">
+                <div *ngIf="isFieldInvalid('name')" class="mt-2 text-sm text-red-400 flex items-center">
+                  <i class="bi bi-exclamation-circle mr-1"></i>
+                  <span *ngIf="contactForm.get('name')?.errors?.['required']">El nombre es requerido</span>
+                  <span *ngIf="contactForm.get('name')?.errors?.['minlength']">Mínimo 3 caracteres</span>
+                </div>
+                <div *ngIf="isFieldValid('name')" class="mt-2 text-sm text-green-400 flex items-center">
+                  <i class="bi bi-check-circle-fill mr-1"></i>¡Perfecto!
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">
+                  <i class="bi bi-envelope-fill text-cyan-400 mr-2"></i>
+                  Correo Electrónico *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  placeholder="tu@email.com"
+                  class="w-full px-4 py-3 bg-[#0a0e27] border-2 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-all"
+                  [class.border-red-500]="isFieldInvalid('email')"
+                  [class.border-green-500]="isFieldValid('email')"
+                  [class.border-gray-700]="!contactForm.get('email')?.touched">
+                <div *ngIf="isFieldInvalid('email')" class="mt-2 text-sm text-red-400 flex items-center">
+                  <i class="bi bi-exclamation-circle mr-1"></i>
+                  <span *ngIf="contactForm.get('email')?.errors?.['required']">El email es requerido</span>
+                  <span *ngIf="contactForm.get('email')?.errors?.['email']">Email inválido</span>
+                </div>
+                <div *ngIf="isFieldValid('email')" class="mt-2 text-sm text-green-400 flex items-center">
+                  <i class="bi bi-check-circle-fill mr-1"></i>¡Email válido!
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone & Subject Row -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Phone -->
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-gray-300 mb-2">
+                  <i class="bi bi-telephone-fill text-blue-400 mr-2"></i>
+                  Teléfono
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  formControlName="phone"
+                  placeholder="+503 0000-0000"
+                  class="w-full px-4 py-3 bg-[#0a0e27] border-2 border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all">
+              </div>
+
+              <!-- Subject -->
+              <div>
+                <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">
+                  <i class="bi bi-tag-fill text-pink-400 mr-2"></i>
+                  Asunto *
+                </label>
+                <select
+                  id="subject"
+                  formControlName="subject"
+                  class="w-full px-4 py-3 bg-[#0a0e27] border-2 rounded-xl text-gray-100 focus:outline-none focus:border-pink-500 transition-all"
+                  [class.border-red-500]="isFieldInvalid('subject')"
+                  [class.border-green-500]="isFieldValid('subject')"
+                  [class.border-gray-700]="!contactForm.get('subject')?.touched">
+                  <option value="">Selecciona una opción</option>
+                  <option value="proyecto">Propuesta de Proyecto</option>
+                  <option value="trabajo">Oportunidad Laboral</option>
+                  <option value="consultoria">Consultoría</option>
+                  <option value="colaboracion">Colaboración</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <div *ngIf="isFieldInvalid('subject')" class="mt-2 text-sm text-red-400 flex items-center">
+                  <i class="bi bi-exclamation-circle mr-1"></i>Selecciona un asunto
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">
+                <i class="bi bi-chat-left-text-fill text-purple-400 mr-2"></i>
+                Mensaje *
+              </label>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="6"
+                placeholder="Cuéntame sobre tu proyecto..."
+                class="w-full px-4 py-3 bg-[#0a0e27] border-2 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-all resize-none"
+                [class.border-red-500]="isFieldInvalid('message')"
+                [class.border-green-500]="isFieldValid('message')"
+                [class.border-gray-700]="!contactForm.get('message')?.touched"></textarea>
+              <div *ngIf="isFieldInvalid('message')" class="mt-2 text-sm text-red-400 flex items-center">
+                <i class="bi bi-exclamation-circle mr-1"></i>
+                <span *ngIf="contactForm.get('message')?.errors?.['required']">El mensaje es requerido</span>
+                <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Mínimo 20 caracteres</span>
+              </div>
+            </div>
+
+            <!-- Privacy Checkbox -->
+            <div>
+              <label class="flex items-start space-x-3 cursor-pointer group">
+                <input
+                  type="checkbox"
+                  formControlName="privacyAccepted"
+                  class="w-5 h-5 mt-1 rounded border-2 border-gray-700 bg-[#0a0e27] text-purple-600 focus:ring-2 focus:ring-purple-500 focus:ring-offset-0 cursor-pointer">
+                <span class="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                  Acepto la política de privacidad y el tratamiento de mis datos *
+                </span>
+              </label>
+              <div *ngIf="contactForm.get('privacyAccepted')?.invalid && contactForm.get('privacyAccepted')?.touched" 
+                   class="mt-2 text-sm text-red-400 flex items-center">
+                <i class="bi bi-exclamation-circle mr-1"></i>Debes aceptar la política
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button
+                type="submit"
+                [disabled]="contactForm.invalid || isSubmitting"
+                class="w-full btn-neon group disabled:opacity-50 disabled:cursor-not-allowed">
+                <span *ngIf="!isSubmitting" class="flex items-center justify-center">
+                  <i class="bi bi-send-fill mr-2 group-hover:scale-110 transition-transform"></i>
+                  Enviar Mensaje
+                </span>
+                <span *ngIf="isSubmitting" class="flex items-center justify-center">
+                  <i class="bi bi-arrow-clockwise animate-spin mr-2"></i>
+                  Enviando...
+                </span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Alert -->
+          <div *ngIf="showSuccessAlert" 
+               class="mt-6 p-4 bg-gradient-to-r from-green-600/20 to-emerald-600/20 border-2 border-green-500/30 rounded-xl backdrop-blur-sm animate-slide-down">
+            <div class="flex items-center space-x-3">
+              <i class="bi bi-check-circle-fill text-green-400 text-2xl"></i>
+              <div>
+                <p class="font-semibold text-green-300">¡Mensaje enviado exitosamente!</p>
+                <p class="text-sm text-green-400/80">Te contactaré pronto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Info (2/5) -->
+      <div class="lg:col-span-2 space-y-6 animate-on-scroll" style="animation-delay: 0.2s;">
+        <!-- Contact Info Card -->
+        <div class="card-neon p-8">
+          <div class="flex items-center space-x-3 mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl flex items-center justify-center shadow-glow">
+              <i class="bi bi-info-circle-fill text-white text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-50">Información de Contacto</h3>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Location -->
+            <div class="flex items-start space-x-4 group hover-lift">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-600/20 to-purple-700/20 border border-purple-500/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <i class="bi bi-geo-alt-fill text-purple-400 text-xl"></i>
+              </div>
+              <div>
+                <h6 class="text-sm font-semibold text-gray-300 mb-1">Ubicación</h6>
+                <p class="text-sm text-gray-400">{{ contactInfo.location }}</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start space-x-4 group hover-lift">
+              <div class="w-12 h-12 bg-gradient-to-br from-cyan-600/20 to-cyan-700/20 border border-cyan-500/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <i class="bi bi-envelope-fill text-cyan-400 text-xl"></i>
+              </div>
+              <div>
+                <h6 class="text-sm font-semibold text-gray-300 mb-1">Email</h6>
+                <a [href]="'mailto:' + contactInfo.email" 
+                   class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors break-all">
+                  {{ contactInfo.email }}
+                </a>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start space-x-4 group hover-lift">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-600/20 to-blue-700/20 border border-blue-500/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <i class="bi bi-telephone-fill text-blue-400 text-xl"></i>
+              </div>
+              <div>
+                <h6 class="text-sm font-semibold text-gray-300 mb-1">Teléfono</h6>
+                <a [href]="getPhoneLink(contactInfo.phone)" 
+                   class="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                  {{ contactInfo.phone }}
+                </a>
+              </div>
+            </div>
+
+            <!-- Availability -->
+            <div class="flex items-start space-x-4 group hover-lift">
+              <div class="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-pink-700/20 border border-pink-500/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <i class="bi bi-clock-fill text-pink-400 text-xl"></i>
+              </div>
+              <div>
+                <h6 class="text-sm font-semibold text-gray-300 mb-1">Horario</h6>
+                <p class="text-sm text-gray-400">{{ contactInfo.availability }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="mt-8 pt-8 border-t border-gray-800">
+            <h6 class="text-sm font-semibold text-gray-300 mb-4">Redes Sociales</h6>
+            <div class="flex flex-wrap gap-3">
+              <a *ngFor="let social of contactInfo.socialLinks"
+                 [href]="social.url"
+                 target="_blank"
+                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/10 to-cyan-600/10 border border-purple-500/20 rounded-xl hover:border-purple-400/40 hover:scale-105 transition-all group">
+                <i [class]="social.icon + ' text-purple-400 group-hover:text-purple-300 transition-colors'"></i>
+                <span class="text-sm text-gray-400 group-hover:text-gray-300">{{ social.platform }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Card -->
+        <div class="card-neon p-8">
+          <h3 class="text-xl font-bold text-gray-50 mb-6 flex items-center">
+            <i class="bi bi-lightning-fill text-yellow-400 mr-3"></i>
+            Acceso Rápido
+          </h3>
+          <div class="space-y-3">
+            <a routerLink="/portfolio" 
+               class="flex items-center justify-between p-3 glass-neon rounded-xl hover-lift group">
+              <div class="flex items-center space-x-3">
+                <i class="bi bi-briefcase-fill text-purple-400 group-hover:scale-110 transition-transform"></i>
+                <span class="text-gray-300 group-hover:text-white transition-colors">Ver Proyectos</span>
+              </div>
+              <i class="bi bi-arrow-right text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
+            </a>
+            <a routerLink="/about" 
+               class="flex items-center justify-between p-3 glass-neon rounded-xl hover-lift group">
+              <div class="flex items-center space-x-3">
+                <i class="bi bi-person-fill text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                <span class="text-gray-300 group-hover:text-white transition-colors">Sobre Mí</span>
+              </div>
+              <i class="bi bi-arrow-right text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all"></i>
+            </a>
+            <a [href]="getPhoneLink(contactInfo.phone)" 
+               class="flex items-center justify-between p-3 glass-neon rounded-xl hover-lift group">
+              <div class="flex items-center space-x-3">
+                <i class="bi bi-telephone-fill text-blue-400 group-hover:scale-110 transition-transform"></i>
+                <span class="text-gray-300 group-hover:text-white transition-colors">Llamar Ahora</span>
+              </div>
+              <i class="bi bi-arrow-right text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OTHER WAYS TO CONNECT ==================== -->
+<section class="section bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
+  <div class="absolute inset-0 hero-pattern opacity-20"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="text-center mb-16 animate-on-scroll">
+      <h2 class="section-title">
+        Otras Formas de <span class="gradient-text-neon">Conectar</span>
+      </h2>
+      <p class="section-subtitle">
+        Elige el medio que prefieras para comunicarnos
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a *ngFor="let social of contactInfo.socialLinks; let i = index"
+         [href]="social.url"
+         target="_blank"
+         class="card-neon p-6 text-center hover-lift group animate-on-scroll"
+         [style.animation-delay]="i * 0.1 + 's'">
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-glow">
+          <i [class]="social.icon + ' text-white text-3xl'"></i>
+        </div>
+        <h6 class="font-bold text-gray-50 mb-1 group-hover:gradient-text-neon transition-all">
+          {{ social.platform }}
+        </h6>
+        <p class="text-sm text-gray-400">{{ social.username || 'Contáctame' }}</p>
+      </a>
+    </div>
+  </div>
+</section>

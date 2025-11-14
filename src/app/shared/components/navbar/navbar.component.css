@@ -1,0 +1,92 @@
+/* ==================== NAVBAR BASE ==================== */
+.navbar {
+  @apply bg-transparent;
+}
+
+.navbar-scrolled {
+  @apply bg-white/80 backdrop-blur-lg shadow-lg;
+}
+
+/* ==================== DESKTOP NAV LINKS ==================== */
+.nav-link {
+  @apply relative text-gray-700;
+}
+
+.nav-link::before {
+  content: '';
+  @apply absolute bottom-0 left-1/2 w-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full;
+  @apply transition-all duration-300;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  @apply w-full;
+}
+
+.nav-link.active {
+  @apply text-primary-600 font-bold;
+}
+
+.nav-link:hover {
+  @apply text-primary-600;
+}
+
+/* ==================== MOBILE NAV LINKS ==================== */
+.mobile-nav-link {
+  @apply bg-white border-2 border-transparent;
+}
+
+.mobile-nav-link:hover {
+  @apply bg-gradient-to-r from-primary-50 to-secondary-50 border-primary-200;
+}
+
+.mobile-nav-link.active-mobile {
+  @apply bg-gradient-to-r from-primary-500 to-secondary-500 text-white;
+}
+
+.mobile-nav-link.active-mobile .bg-gradient-to-br {
+  @apply from-white to-white;
+}
+
+.mobile-nav-link.active-mobile i {
+  @apply text-primary-600;
+}
+
+.mobile-nav-link.active-mobile span {
+  @apply text-white;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* ==================== LOGO ANIMATION ==================== */
+.navbar a[routerLink="/"] .bi-code-slash {
+  animation: rotate-logo 20s linear infinite;
+}
+
+@keyframes rotate-logo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .navbar {
+    @apply bg-white/95 backdrop-blur-lg shadow-md;
+  }
+}

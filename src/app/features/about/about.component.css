@@ -1,0 +1,153 @@
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in > * {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-fade-in > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-fade-in > *:nth-child(3) { animation-delay: 0.3s; }
+
+/* ==================== SCROLL ANIMATIONS ==================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== IMAGE EFFECTS ==================== */
+.profile-image-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.profile-image-container:hover img {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+/* ==================== SKILL BAR ANIMATION ==================== */
+.skill-progress {
+  animation: skillProgress 2s ease-out;
+}
+
+@keyframes skillProgress {
+  from {
+    width: 0;
+  }
+}
+
+/* ==================== TIMELINE RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .grid.md\:grid-cols-2 {
+    display: block;
+  }
+
+  .md\:text-right,
+  .md\:text-left {
+    text-align: left !important;
+  }
+}
+
+/* ==================== FLOATING ORBS ANIMATION ==================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ==================== GLOW EFFECT ==================== */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+.shadow-glow-lg {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+/* ==================== CARD HOVER EFFECTS ==================== */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+/* ==================== GRADIENT TEXT ANIMATION ==================== */
+.gradient-text-neon {
+  background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-neon,
+  .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+.will-change-transform {
+  will-change: transform;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
