@@ -1,17 +1,16 @@
-<!-- ==================== HERO SECTION - DARK ==================== -->
-<section class="hero-section relative min-h-screen flex items-center overflow-hidden pt-20">
+<!-- ==================== HERO SECTION - ENHANCED ==================== -->
+<section class="hero-section relative flex items-center overflow-hidden pt-20">
   <!-- Animated Background -->
   <div class="absolute inset-0 hero-pattern"></div>
   <div class="absolute inset-0 grid-pattern opacity-20"></div>
   
-  <!-- Floating Elements -->
-  <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
-  <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-  <div class="absolute top-40 right-20 w-64 h-64 bg-cyan-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 4s;"></div>
+  <!-- Floating Elements (NO afectan el layout) -->
+  <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-float pointer-events-none"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float pointer-events-none" style="animation-delay: 2s;"></div>
+  <div class="absolute top-40 right-20 w-64 h-64 bg-cyan-600/20 rounded-full blur-3xl animate-float pointer-events-none" style="animation-delay: 4s;"></div>
   
-  <div class="container-custom relative z-10">
+  <div class="container-custom relative z-10 py-20">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      
       <!-- Left Content -->
       <div class="space-y-8 animate-fade-in">
         <!-- Badge -->
@@ -19,32 +18,26 @@
           <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
           <span class="text-sm font-semibold text-purple-300">Disponible para proyectos</span>
         </div>
-
-        <!-- Main Title -->
-        <div class="space-y-4">
-          <h1 class="text-5xl md:text-7xl font-bold leading-tight text-gray-50">
-            Hola, soy
-            <span class="block gradient-text-neon mt-2">Jonatan Guevara</span>
-          </h1>
-          
-          <!-- Typing Animation -->
-          <div class="h-16 flex items-center">
-            <p class="text-2xl md:text-3xl font-semibold text-gray-300">
-              {{ typedText }}
-              <span class="animate-pulse text-purple-400">|</span>
-            </p>
-          </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight text-gray-50">
+          Hola, soy
+          <span class="block gradient-text-neon mt-2">Jonatan Guevara</span>
+        </h1>
+        
+        <!-- Typing Animation -->
+        <div class="h-16 flex items-center">
+          <p class="text-2xl md:text-3xl font-semibold text-gray-300">
+            {{ typedText }}<span class="animate-pulse text-purple-400">|</span>
+          </p>
         </div>
-
+        
         <!-- Description -->
         <p class="text-lg text-gray-400 leading-relaxed max-w-xl">
           Especializado en desarrollo web moderno con <span class="font-semibold text-purple-400">React</span>, 
           <span class="font-semibold text-cyan-400">Next.js</span>, 
-          <span class="font-semibold text-blue-400">Node.js</span> y arquitecturas cloud. 
-          Transformo ideas en soluciones tecnológicas escalables.
+          <span class="font-semibold text-blue-400">Node.js</span> y arquitecturas cloud.
         </p>
-
-        <!-- CTA Buttons -->
+        
         <div class="flex flex-wrap gap-4">
           <a routerLink="/portfolio" class="btn-neon group">
             <i class="bi bi-briefcase-fill mr-2 group-hover:scale-110 transition-transform"></i>
@@ -55,7 +48,7 @@
             Contáctame
           </a>
         </div>
-
+        
         <!-- Social Links -->
         <div class="flex items-center space-x-4 pt-4">
           <span class="text-sm text-gray-400 font-medium">Sígueme:</span>
@@ -73,19 +66,19 @@
           </a>
         </div>
       </div>
-
+      
       <!-- Right Content - 3D Card -->
-      <div class="relative lg:block hidden">
+      <div class="relative hidden lg:block">
         <div class="relative z-10 card-3d">
           <img 
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=600&fit=crop" 
             alt="Developer workspace" 
             class="rounded-3xl shadow-2xl w-full h-auto border-2 border-purple-500/30">
           
-          <!-- Floating Cards -->
+          <!-- Floating Stats Cards -->
           <div class="absolute -top-6 -right-6 glass-neon p-6 rounded-2xl shadow-glow-neon animate-float" style="animation-delay: 1s;">
             <div class="flex items-center space-x-3">
-              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-glow">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
                 <i class="bi bi-check-lg text-white text-2xl"></i>
               </div>
               <div>
@@ -97,7 +90,7 @@
 
           <div class="absolute -bottom-6 -left-6 glass-neon p-6 rounded-2xl shadow-glow-neon animate-float" style="animation-delay: 2s;">
             <div class="flex items-center space-x-3">
-              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-glow">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
                 <i class="bi bi-code-slash text-white text-2xl"></i>
               </div>
               <div>
@@ -107,85 +100,75 @@
             </div>
           </div>
         </div>
-
-        <!-- Glow Effect -->
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-3xl blur-3xl"></div>
       </div>
     </div>
-
+    
     <!-- Scroll Indicator -->
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <button (click)="scrollToSection('stats')" class="w-12 h-12 rounded-full border-2 border-purple-500 flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white hover:border-purple-400 transition-all duration-300">
+      <button (click)="scrollToSection('stats')" class="w-12 h-12 rounded-full border-2 border-purple-500 flex items-center justify-center text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300">
         <i class="bi bi-chevron-down text-xl"></i>
       </button>
     </div>
   </div>
 </section>
 
-<!-- ==================== STATS SECTION - DARK ==================== -->
-<section id="stats" class="section bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
-  <div class="absolute inset-0 dot-pattern opacity-10"></div>
+<!-- ==================== STATS ==================== -->
+<section id="stats" class="py-20 bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
+  <div class="absolute inset-0 dot-pattern opacity-10 pointer-events-none"></div>
   
   <div class="container-custom relative z-10">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-      <div *ngFor="let stat of stats; let i = index" 
-           class="animate-on-scroll text-center"
-           [style.animation-delay]="i * 0.1 + 's'">
-        <div class="card-neon p-8 hover-lift hover-glow group">
-          <div class="icon-container mx-auto mb-4 group-hover:scale-110 transition-transform shadow-glow">
-            <i [class]="stat.icon + ' text-3xl'"></i>
-          </div>
-          <h3 class="text-4xl md:text-5xl font-bold gradient-text-neon mb-2">{{ stat.value }}</h3>
-          <p class="text-gray-300 font-medium">{{ stat.label }}</p>
-          <p class="text-sm text-gray-500 mt-2">{{ stat.description }}</p>
+    <h2 class="text-4xl font-bold text-center mb-12 text-white">Estadísticas</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div *ngFor="let stat of stats" class="card-neon text-center p-6 animate-on-scroll">
+        <div class="icon-container mx-auto mb-4">
+          <i [class]="stat.icon + ' text-3xl text-white'"></i>
         </div>
+        <h3 class="text-4xl font-bold gradient-text-neon mb-2">{{ stat.value }}</h3>
+        <p class="text-gray-300 font-medium">{{ stat.label }}</p>
+        <p class="text-sm text-gray-500 mt-2">{{ stat.description }}</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== SERVICES SECTION - DARK ==================== -->
-<section class="section relative overflow-hidden">
-  <div class="absolute inset-0 grid-pattern opacity-10"></div>
+<!-- ==================== SERVICIOS ==================== -->
+<section class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 grid-pattern opacity-10 pointer-events-none"></div>
   
   <div class="container-custom relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="section-title">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-white mb-4">
         Mis <span class="gradient-text-neon">Servicios</span>
       </h2>
-      <p class="section-subtitle">
+      <p class="text-xl text-gray-400">
         Soluciones tecnológicas integrales para llevar tu proyecto al siguiente nivel
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div *ngFor="let service of services; let i = index" 
-           class="animate-on-scroll"
-           [style.animation-delay]="i * 0.1 + 's'">
+      <div *ngFor="let service of services" class="service-card">
         <div class="card-neon h-full p-8 hover-lift hover-glow group cursor-pointer">
-          <!-- Icon -->
-          <div class="icon-container mb-6 group-hover:scale-110 transition-all duration-300 group-hover:shadow-glow-lg">
-            <i [class]="service.icon + ' text-3xl'"></i>
+          <div class="icon-container mb-6">
+            <i [class]="service.icon + ' text-3xl text-white'"></i>
           </div>
 
-          <!-- Content -->
           <h3 class="text-2xl font-bold mb-4 text-gray-50 group-hover:gradient-text-neon transition-all">
             {{ service.title }}
           </h3>
+          
           <p class="text-gray-400 leading-relaxed mb-6">
             {{ service.description }}
           </p>
 
-          <!-- Features -->
           <ul class="space-y-2">
             <li *ngFor="let feature of service.features" class="flex items-center text-sm text-gray-400">
               <i class="bi bi-check-circle-fill text-purple-500 mr-2"></i>
-              {{ feature }}
+              <span>{{ feature }}</span>
             </li>
           </ul>
 
-          <!-- Arrow Icon -->
-          <div class="mt-6 flex items-center text-purple-400 font-semibold group-hover:translate-x-2 transition-transform">
+          <div class="mt-6 flex items-center text-purple-400 font-semibold text-sm group-hover:translate-x-2 transition-transform">
             <span>Ver más</span>
             <i class="bi bi-arrow-right ml-2"></i>
           </div>
@@ -195,47 +178,39 @@
   </div>
 </section>
 
-<!-- ==================== FEATURED PROJECTS - DARK ==================== -->
-<section class="section bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
-  <div class="absolute inset-0 hero-pattern opacity-20"></div>
+<!-- ==================== PROYECTOS ==================== -->
+<section class="py-20 bg-gradient-to-br from-[#0a0e27] via-[#1a1f35] to-[#0a0e27] relative overflow-hidden">
+  <div class="absolute inset-0 hero-pattern opacity-20 pointer-events-none"></div>
   
   <div class="container-custom relative z-10">
-    <div class="text-center mb-16 animate-on-scroll">
-      <h2 class="section-title">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-bold text-white mb-4">
         Proyectos <span class="gradient-text-neon">Destacados</span>
       </h2>
-      <p class="section-subtitle">
+      <p class="text-xl text-gray-400">
         Algunos de mis trabajos más recientes y significativos
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 mb-12">
-      <div *ngFor="let project of featuredProjects; let i = index" 
-           class="animate-on-scroll"
-           [style.animation-delay]="i * 0.15 + 's'">
+      <div *ngFor="let project of featuredProjects" class="project-card">
         <div class="card-neon overflow-hidden group cursor-pointer hover-lift hover-glow h-full">
-          <!-- Image -->
           <div class="relative h-64 overflow-hidden">
             <img [src]="project.image" [alt]="project.title" 
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
             
-            <!-- Badge -->
             <div class="absolute top-4 right-4 badge-neon">
               {{ project.category }}
             </div>
 
-            <!-- Hover Overlay -->
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <a [href]="project.demoUrl" target="_blank" 
-                 class="btn-neon text-sm">
-                <i class="bi bi-eye-fill mr-2"></i>
-                Ver Proyecto
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <a [href]="project.demoUrl" target="_blank" class="btn-neon text-sm px-6 py-3">
+                <i class="bi bi-eye-fill mr-2"></i>Ver Proyecto
               </a>
             </div>
           </div>
 
-          <!-- Content -->
           <div class="p-6">
             <h3 class="text-2xl font-bold mb-3 text-gray-50 group-hover:gradient-text-neon transition-all">
               {{ project.title }}
@@ -244,10 +219,8 @@
               {{ project.description }}
             </p>
 
-            <!-- Technologies -->
             <div class="flex flex-wrap gap-2">
-              <span *ngFor="let tech of project.technologies" 
-                    class="badge-neon text-xs">
+              <span *ngFor="let tech of project.technologies" class="badge-neon text-xs">
                 {{ tech }}
               </span>
             </div>
@@ -256,8 +229,7 @@
       </div>
     </div>
 
-    <!-- View All Button -->
-    <div class="text-center animate-on-scroll">
+    <div class="text-center">
       <a routerLink="/portfolio" class="btn-neon inline-flex items-center group">
         Ver Todos los Proyectos
         <i class="bi bi-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
@@ -266,32 +238,29 @@
   </div>
 </section>
 
-<!-- ==================== CTA SECTION - DARK ==================== -->
-<section class="section relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-cyan-900/30"></div>
-  <div class="absolute inset-0 grid-pattern opacity-20"></div>
+<!-- ==================== CTA ==================== -->
+<section class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-blue-900/30 to-cyan-900/30 pointer-events-none"></div>
+  <div class="absolute inset-0 grid-pattern opacity-20 pointer-events-none"></div>
   
   <!-- Animated Orbs -->
-  <div class="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float"></div>
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
-
+  <div class="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float pointer-events-none"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl animate-float pointer-events-none" style="animation-delay: 2s;"></div>
+  
   <div class="container-custom relative z-10 text-center">
-    <div class="max-w-3xl mx-auto animate-on-scroll">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-5xl font-bold mb-6 text-gray-50">
         ¿Tienes un Proyecto en <span class="gradient-text-neon">Mente?</span>
       </h2>
       <p class="text-xl mb-8 text-gray-400">
-        Trabajemos juntos para hacer realidad tu próxima gran idea. 
-        Estoy disponible para proyectos freelance y colaboraciones.
+        Trabajemos juntos para hacer realidad tu próxima gran idea.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a routerLink="/contact" class="btn-neon">
-          <i class="bi bi-send-fill mr-2"></i>
-          Iniciar Conversación
+          <i class="bi bi-send-fill mr-2"></i>Iniciar Conversación
         </a>
         <a href="tel:72827035" class="btn-outline">
-          <i class="bi bi-telephone-fill mr-2"></i>
-          Llamar Ahora
+          <i class="bi bi-telephone-fill mr-2"></i>Llamar Ahora
         </a>
       </div>
     </div>
